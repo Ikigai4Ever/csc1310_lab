@@ -6,7 +6,7 @@ We will be creating a program that is a personality test that will put someone i
 
 ## Program Outline
 
-We will take in the user's information (first and last name, email, phone number) and put it into a text file. Then they will take a multiple choice quiz with a set number of questions to put them into a category of personality based on previous responses.
+We will take in the user's information (first and last name, email, phone number) and put it into a text file. Then they will take a multiple choice quiz with a set number of questions to put them into a category of personality based on previous responses. We will calculate the personality type based on a range of whole number and decimal values from 1 to 5 to categorize them into a personality.
 
 ## Classes Needed 
 - Quiz Taker's Information (Storage Class)
