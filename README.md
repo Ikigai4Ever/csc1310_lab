@@ -2,7 +2,7 @@
 
 ## Program Description
 
-We will be creating a program that is a personality test that will put someone in a percentile of similar responses/personalities. This information will be gathered previously out of 100 people and the person taking the quiz will have their answers and final results added into the orgional information.
+We will be creating a program that is a personality test that will put someone in a percentile of similar responses/personalities. This information will be gathered previously out of 100 people and the person taking the quiz will have their answers and final results added into the orgional information. The theme will be Smiling Friendss
 
 ## Program Outline
 
