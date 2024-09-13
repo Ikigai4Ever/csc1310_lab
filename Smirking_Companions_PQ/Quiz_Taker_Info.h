@@ -2,5 +2,5 @@
  *  NAME:
  *  DATE:
  *  DESCRIPTION:
- *  PROGRAM:
+ *  PROGRAM: Quiz_Taker_Info.cpp
  */
