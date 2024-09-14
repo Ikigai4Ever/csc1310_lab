@@ -1,5 +1,6 @@
 # Write-Up File
  **NAME:** Ty Ahrens
+
  **DATE:** 9/13/24
 
 The program that we are going to be creating is a personality quiz that is going to take the responses from a user and categorize the response based on a number from 1 through 5. The most common number that appears for the user will be what quantifies what type of Smiling Friends character they will be. 
