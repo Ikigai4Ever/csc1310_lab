@@ -13,3 +13,11 @@ We will take in the user's information (first and last name, email, phone number
 - Quiz Answers (Storage Class)
 - Personalities (Data Class)
 - Maybe: Question Type (Data Class)
+
+## MAIN FLOW
+1) Take in user's info
+2) User takes quiz
+3) *Evan* sends quiz answers to *Ty*
+4) *Evan* sends personality type to *Zander*
+5) *Ty* & *Zander* put answers & user info to .txt file
+6) Display statistics of personilty and question answers
