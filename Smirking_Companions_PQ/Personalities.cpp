@@ -1,6 +1,6 @@
 /* 
  *  NAME:
  *  DATE:
- *  DESCRIPTION:
+ *  DESCRIPTION: send personalities to quiz_taker_info 
  *  PROGRAM: Personalities.cpp
  */
