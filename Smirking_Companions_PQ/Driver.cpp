@@ -54,6 +54,7 @@ void personality_quiz(int* q_array,int SIZE, string name)
     // 5) the boss, whacky, evil?, REALLY cares about his comapny
     
     cout << "\nLet's start the quiz now " << name << "!" << endl;
+    cout << "QUESTION 1" << endl;
     cout << name << ", the company you work for has new competition. It seems like they are doing the complete opposite of what your company does, and frankly, are quite evil." << endl;
     cout << "What do you do, " << name << "?" << endl;
     cout << "1) tul eðe fdisuuvp edikþaaðl loofobl úww." << endl;
@@ -63,12 +64,31 @@ void personality_quiz(int* q_array,int SIZE, string name)
     cout << "5) Consult my board of shady and corrupt advisors and then \"get rid\" of the compitetion." << endl;
     cout << "Answer: ";
     //cin  >> q_array[0];
+    cout << "QUESTION 2" << endl;
+    cout << name << ", It is a tight race in the presidential vote. The two Candiates are President Jimble and Mr. Frog." << endl;
+    cout << "Who are you going to vote for, " << name << "?" << endl;
+    cout << "1) oþbnore eþrepe syrhood." << endl;
+    cout << "2) I would vote for President Jimble based on the adventure I had with him!" << endl;
+    cout << "3) I hate poltics, i'm not voting." << endl;
+    cout << "4) I would vote for President Jimble becasue of his policies." << endl;
+    cout << "5) Why of course I voted for President Jimble! I got a 10,000 bet he will win! If he doesn't win there will be repercussions." << endl;
+    cout << "Answer: ";
+    //cin  >> q_array[1];
+    cout << "QUESTION 3" << endl;
+    cout << name << "If you could describe yourself in one word what would it be?" << endl;
     
+    cout << "1) ielinutle." << endl;
+    cout << "2) Innocent." << endl;
+    cout << "3) Chill." << endl;
+    cout << "4) Deadpan." << endl;
+    cout << "5) Eccentric." << endl;
+    cout << "Answer: ";
+    //cin  >> q_array[2];
 
 }
 
 
-float personality_calc(int* q_array,int SIZE, float total)
+float personality_calc(int* q_array,int SIZE, float total) //I dont like this calc i think it is innaccurate and doesnt give an accurate representation
 {
   for (int i = 0; i < SIZE; i++)
   {
