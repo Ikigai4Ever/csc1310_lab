@@ -10,25 +10,31 @@
 #include "Quiz_Answers.h"
 #include "Quiz_Taker_Info.h"
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 const int SIZE = 10;
 void personality_quiz(int*, int, string); //Evan function
-int personality_calc(int*,int, string);//Evan function
+float personality_calc(int*,int, float);//Evan function
+string personality_assign(float,string);//Evan function
 string get_user(); //Zander function
-int main(){
-    int question_array[SIZE];
-    int personality;
-    string name; 
+int main()
+{
+    int question_array[SIZE]  = {1,2,5,4,5,1,5,2,4,5}; //delete array values
+    float personality_total=0;
+    
+    string name, personality; 
     //maybe put a switch case so you have options like taking the quiz or viewing all the data?
     cout << "\n\nHELLO! Welcome to the Smirking Companions persoanlity quiz!" << endl;
     cout << "The purpose of this program is to find out which Smirking Companion YOU are."<< endl; 
     cout << "Lets's begin!" << endl;
-
-    name = get_user();
-    personality_quiz(question_array, SIZE, name);
-    personality = personality_calc(question_array, SIZE, name);
-
+    cout << fixed << setprecision(2);
+    //name = get_user();
+    //personality_quiz(question_array, SIZE, name);
+    personality_total = personality_calc(question_array, SIZE, personality_total);
+    
+    personality = personality_assign(personality_total,personality);
+    cout << personality << endl;
 
     return 0;
 }
@@ -56,14 +62,40 @@ void personality_quiz(int* q_array,int SIZE, string name)
     cout << "4) Check to see if the opposing company has a better 401(k). " << endl;
     cout << "5) Consult my board of shady and corrupt advisors and then \"get rid\" of the compitetion." << endl;
     cout << "Answer: ";
-    cin  >> q_array[0];
-
+    //cin  >> q_array[0];
+    
 
 }
 
 
-int personality_calc(int* q_array,int SIZE, string name)
+float personality_calc(int* q_array,int SIZE, float total)
 {
+  for (int i = 0; i < SIZE; i++)
+  {
+    total = total + q_array[i];
+  }
+    cout << total << endl; //
+    return total;
+}
+
+string personality_assign (float total, string personality)
+{
+    
+    total = (total/10);
+    
+    cout << total << endl; //
+    if (total < 2)
+    personality = "Glep";
+    else if (total > 2 && total < 3)
+    personality = "Pim";
+    else if (total > 3 && total < 4)
+    personality = "Charlie";
+    else if (total > 4 && total < 5)
+    personality = "Alan";
+    else 
+    personality = "The Boss";
+
+    return personality;
 
 
 
