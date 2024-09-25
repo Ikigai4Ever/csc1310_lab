@@ -20,7 +20,7 @@ string personality_assign(float,string);//Evan function
 string get_user(); //Zander function
 int main()
 {
-    int question_array[SIZE]  = {1,2,5,4,5,1,5,2,4,5}; //delete array values
+    int question_array[SIZE]  = {1,1,5,1,5,1,5,1,1,1}; //delete array values
     float personality_total=0;
     
     string name, personality; 
@@ -84,6 +84,17 @@ void personality_quiz(int* q_array,int SIZE, string name)
     cout << "5) Eccentric." << endl;
     cout << "Answer: ";
     //cin  >> q_array[2];
+
+    cout << "QUESTION 4" << endl;
+    cout << name << ", if you could describe your physcial appearance in an Adult Swim animated TV show created by Zach Hadel and Michael Cusack, what would it look like?" << endl;
+    
+    cout << "1) A small green creature with a purple hat that speaks a language only understandable by characters in the show." << endl;
+    cout << "2) A short purple humanoid with an exposed nerve ending." << endl;
+    cout << "3) A rotund yellow humanoid with a comically large nose." << endl;
+    cout << "4) A tall, long limbed red creature with a tie." << endl;
+    cout << "5) A 60-70 year old man with a horseshoe baldspot that is covered with a mismatching toupee." << endl;
+    cout << "Answer: ";
+    //cin  >> q_array[3];
 
 }
 
