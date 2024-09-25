@@ -5,18 +5,30 @@
  *  PROGRAM: Quiz_Taker_Info.cpp
  */
 
+#include <iostream>
+#include <string>
+using namespace std;
+
 #include "Quiz_Taker_Info.h"
 
 //class decleration for quiz taker's info
-
 class Info
 {
-    public:
+    private:
         string firstName;
         string lastName;
         string email;
         string phoneNum;
-
-    private:
+    public:
+        void setinfo(string,string,string,string);
 
 };
+
+void Info::setinfo(string firstName,string lastName,string email,string phoneNum)
+{
+    this->firstName = firstName;
+    this->lastName = lastName;
+    this->email = email;
+    this->phoneNum = phoneNum;
+
+}

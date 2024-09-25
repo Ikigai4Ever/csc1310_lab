@@ -5,6 +5,10 @@
  *  PROGRAM: Quiz_Taker_Info.cpp
  */
 
-#include <iostream>
-#include <string>
-using namespace std;
+#ifdef QUIZ_TAKER_INFO_H
+#define QUIZ_TAKER_INFO_H
+
+void setinfo(string,string,string,string);
+
+
+#endif
