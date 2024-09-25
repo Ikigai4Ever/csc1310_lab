@@ -4,15 +4,17 @@
  *  DESCRIPTION: Save quiz answers to questions array, 
  *  PROGRAM: Quiz_Answers.cpp
  */
+#include <fstream>
 
 class Answers{
     private:
         int questions[10];
+        std::fstream answerFile;
 
     public:
         int *questionsptr = questions;
         void Answers::getAnswers();
-        void Answers::storeAnswers();
+        void Answers::storeAnswers(int);
 };
 
 /*
@@ -29,8 +31,9 @@ void Answers::getAnswers(){
  *                   in the personality quiz in the answers.txt file
  */
 
-void Answers::storeAnswers(){
-    for (int i = 0; i < 10; i++){
-
-    }
+void Answers::storeAnswers(int userResponse){
+    answerFile.open("answers.txt");
+    answerFile >> userResponse;
+    answerFile.ignore();
+    answerFile.close();
 }
