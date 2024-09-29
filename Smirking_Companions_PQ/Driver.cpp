@@ -15,16 +15,18 @@ using namespace std;
 
 const int SIZE = 10;
 void personality_quiz(int*, int, string); //Evan function
-float personality_calc(int*,int, float);//Evan function
-string personality_assign(float,string);//Evan function
+int personality_calc(int*,int, int*);//Evan function
+string personality_assign(int);//Evan function
 string get_user(); //Zander function
 int main()
 {
   int choice=0;
     do{
 
-    int question_array[SIZE]  = {1,1,5,1,5,1,5,1,1,1}; //delete array values
-    float personality_total=0;
+    int question_array[SIZE]  = {1,2,2,3,3,3,3,5,1,1}; //delete array values
+    int personality_array[5]= {0,0,0,0,0};
+    int personality_num = 0;
+    //float personality_total=0;
     string name, personality;
 
 
@@ -39,9 +41,9 @@ int main()
     cout << fixed << setprecision(2);
     //name = get_user();
     //personality_quiz(question_array, SIZE, name);
-    personality_total = personality_calc(question_array, SIZE, personality_total);
+    personality_num = personality_calc(question_array, SIZE, personality_array);
     
-    personality = personality_assign(personality_total,personality);
+    personality = personality_assign(personality_num);
     cout << personality << endl;
 
     }while (choice != 2);
@@ -172,38 +174,55 @@ void personality_quiz(int* q_array,int SIZE, string name)
 }
 
 
-float personality_calc(int* q_array,int SIZE, float total) //I dont like this calc i think it is innaccurate and doesnt give an accurate representation
+int personality_calc(int* q_array,int SIZE, int* p_array) //I dont like this calc i think it is innaccurate and doesnt give an accurate representation
 {
   // double array for the win
+  int highest, p_index = 0;
+
   for (int i = 0; i < SIZE; i++)
   {
-    total = total + q_array[i];
+    if (q_array[i] == 1)
+      p_array[0] = p_array[0] + 1;
+    else if (q_array[i] == 2)
+      p_array[1] = p_array[1] + 1;
+    else if (q_array[i] == 3)
+      p_array[2] = p_array[2] + 1;
+    else if (q_array[i] == 4)
+      p_array[3] = p_array[3] + 1;
+    else if (q_array[i] == 5)
+      p_array[4] = p_array[4] + 1;
   }
-    cout << total << endl; //
-    return total;
+    
 
+  for (int i = 0; i < 5; i++)
+  {
+    if (p_array[i] > highest)
+    {
+    highest = p_array[i];
+    p_index = i;
+    }
+    cout << "THE HIGHEST in lopp IS " << p_index << endl;
+  }
+    cout << "THE HIGHEST IS " << p_index+1 << endl;
+    return p_index+ 1;
     // either 2 are equal, 3 are equal, or 5 are equal
 }
 
-string personality_assign (float total, string personality)
+string personality_assign (int p_num)
 {
-    
-    total = (total/10);
-    
-    cout << total << endl; //
-    if (total < 2)
-    personality = "Glep";
-    else if (total > 2 && total < 3)
-    personality = "Pim";
-    else if (total > 3 && total < 4)
-    personality = "Charlie";
-    else if (total > 4 && total < 5)
-    personality = "Alan";
+
+    if (p_num == 1)
+    return "Glep";
+
+    else if (p_num == 2)
+    return "Pim";
+
+    else if (p_num == 3)
+    return "Charlie";
+
+    else if (p_num == 4)
+    return "Alan";
+
     else 
-    personality = "The Boss";
-
-    return personality;
-
-
-
+    return "The Boss";
 }
