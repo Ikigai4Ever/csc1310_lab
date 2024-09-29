@@ -11,10 +11,10 @@
 
 class Answers{
     private:
-        int questionsPtr;           //questions pointer for allocated questions array to calculate percentages
         std::fstream answerFile;    //file that all of the previous answers are stored in
 
     public:
+        int *questionsPtr;           //questions pointer for allocated questions array to calculate percentages
         void Answers::getAnswers();         //definition to function getAnswers()
         void Answers::storeAnswers(int);    //definition to function storeAnswers()
 };
