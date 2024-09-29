@@ -6,11 +6,12 @@
  *  PROGRAM: Driver.cpp
  */
 
-#include "Personalities.h"
-#include "Quiz_Answers.h"
-#include "Quiz_Taker_Info.h"
+//#include "Personalities.h"
+//#include "Quiz_Answers.h"
+//#include "Quiz_Taker_Info.h"
 #include <iostream>
 #include <iomanip>
+#include<time.h>
 using namespace std;
 
 const int SIZE = 10;
@@ -20,13 +21,13 @@ string personality_assign(int);//Evan function
 string get_user(); //Zander function
 int main()
 {
+  srand (time(0));
   int choice=0;
-    do{
 
-    int question_array[SIZE]  = {1,2,2,3,3,3,3,5,1,1}; //delete array values
+    do{
+    int question_array[SIZE]  = {4,4,4,4,2,2,5,3,2,2}; //delete array values
     int personality_array[5]= {0,0,0,0,0};
     int personality_num = 0;
-    //float personality_total=0;
     string name, personality;
 
 
@@ -174,12 +175,18 @@ void personality_quiz(int* q_array,int SIZE, string name)
 }
 
 
-int personality_calc(int* q_array,int SIZE, int* p_array) //I dont like this calc i think it is innaccurate and doesnt give an accurate representation
+int personality_calc(int* q_array,int SIZE, int* p_array) //calcs personliaty based on which persoanlity you answered the most, i.e. mode
 {
-  // double array for the win
-  int highest, p_index = 0;
+  
+  int highest=-1; //set the highesst value to -1 because you can have a 0 in the array
+  int p_index = 0; //the number value of the personlality that will be returned
+  int t_size=1; //works as the size of the tie_array
+  int t_index = 0;//index for t_array
+  int rnum = 0;//random number
+   
 
-  for (int i = 0; i < SIZE; i++)
+  
+  for (int i = 0; i < SIZE; i++) //populates the p_array to see which personlaity was the most frequent
   {
     if (q_array[i] == 1)
       p_array[0] = p_array[0] + 1;
@@ -194,21 +201,67 @@ int personality_calc(int* q_array,int SIZE, int* p_array) //I dont like this cal
   }
     
 
-  for (int i = 0; i < 5; i++)
+  for (int i = 0; i < 5; i++) //Looks for the highest frequency is the p_array
   {
-    if (p_array[i] > highest)
+    
+    if (p_array[i] > highest) //checks which is highest
     {
     highest = p_array[i];
     p_index = i;
     }
-    cout << "THE HIGHEST in lopp IS " << p_index << endl;
+
+    else if (p_array[i] == highest) //checks for ties
+    {
+        t_size++;
+    }
+    
   }
-    cout << "THE HIGHEST IS " << p_index+1 << endl;
+    
+    
+
+    if (t_size == 1) //there are no ties retuen the index with the highest number
     return p_index+ 1;
-    // either 2 are equal, 3 are equal, or 5 are equal
+
+    else //there are ties
+    {
+        
+        int* tie_array= new int [t_size]; //creates an array that will be the size of the ties, i.e one tie is size 2
+
+        for (int i = 0; i < t_size;i++) //intiliazes the tie_array to 0
+        {
+            tie_array[i] = 0;
+        }
+        
+        for (int i = 0; i < 5; i++) //populates the tie_array
+        {
+            
+            if (highest == p_array[i]) //checks which index is equal to the highest
+            {
+    
+                tie_array[t_index] = i+1; //places that index plus 1 into the value of the tie_array
+                
+                t_index++;
+                
+            }
+             
+
+        }
+
+        rnum = rand() % (t_size);    //generates a range from t_size to 0
+           
+        p_index = tie_array[rnum];
+
+        delete[] tie_array; //release memory
+        
+        return p_index;
+        
+        
+
+    }
+    
 }
 
-string personality_assign (int p_num)
+string personality_assign (int p_num) //assigns a personality based on the number value from personality_calc
 {
 
     if (p_num == 1)
