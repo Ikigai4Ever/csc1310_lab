@@ -20,12 +20,20 @@ string personality_assign(float,string);//Evan function
 string get_user(); //Zander function
 int main()
 {
+  int choice=0;
+    do{
+
     int question_array[SIZE]  = {1,1,5,1,5,1,5,1,1,1}; //delete array values
     float personality_total=0;
-    
-    string name, personality; 
-    //maybe put a switch case so you have options like taking the quiz or viewing all the data?
+    string name, personality;
+
+
+
     cout << "\n\nHELLO! Welcome to the Smirking Companions persoanlity quiz!" << endl;
+    cout << "1) Begin quiz" << endl << "2) End program" << endl;
+    cin >> choice;
+    if (choice == 2)
+    break;
     cout << "The purpose of this program is to find out which Smirking Companion YOU are."<< endl; 
     cout << "Lets's begin!" << endl;
     cout << fixed << setprecision(2);
@@ -36,6 +44,9 @@ int main()
     personality = personality_assign(personality_total,personality);
     cout << personality << endl;
 
+    }while (choice != 2);
+
+    cout << "Goodbye!" << endl;
     return 0;
 }
 
@@ -155,17 +166,23 @@ void personality_quiz(int* q_array,int SIZE, string name)
     cout << "5) Charlie Brown." << endl;
     cout << "Answer: ";
     //cin  >> q_array[9]; 
+
+
+ 
 }
 
 
 float personality_calc(int* q_array,int SIZE, float total) //I dont like this calc i think it is innaccurate and doesnt give an accurate representation
 {
+  // double array for the win
   for (int i = 0; i < SIZE; i++)
   {
     total = total + q_array[i];
   }
     cout << total << endl; //
     return total;
+
+    // either 2 are equal, 3 are equal, or 5 are equal
 }
 
 string personality_assign (float total, string personality)
