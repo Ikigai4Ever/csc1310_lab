@@ -1,20 +1,22 @@
 /* 
  *  NAME: Ty Ahrens
- *  DATE: 9/25/24
- *  DESCRIPTION: Save quiz answers to questions array, 
+ *  DATE: 9/28/24
+ *  DESCRIPTION: Class that goes to calculate the
+ *               percentages of quiz takers that have responded to each
+ *               answer previously in answers.txt. This also goes to write
+ *               each answer into the answers.txt file
  *  PROGRAM: Quiz_Answers.h
  */
 #include <fstream>
 
 class Answers{
     private:
-        int questions[10];
-        std::fstream answerFile;
+        int questionsPtr;           //questions pointer for allocated questions array to calculate percentages
+        std::fstream answerFile;    //file that all of the previous answers are stored in
 
     public:
-        int *questionsptr = questions;
-        void Answers::getAnswers();
-        void Answers::storeAnswers(int);
+        void Answers::getAnswers();         //definition to function getAnswers()
+        void Answers::storeAnswers(int);    //definition to function storeAnswers()
 };
 
 /*
