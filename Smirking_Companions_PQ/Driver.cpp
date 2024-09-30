@@ -14,18 +14,23 @@
 #include<time.h>
 using namespace std;
 
+
+/************************  GLOBAL VARIABLES **************************/
 const int SIZE = 10;
+
+/***********************  FUNCTION PROTOTYPES ************************/
 void personality_quiz(int*, int, string); //Evan function
-int personality_calc(int*,int, int*);//Evan function
-string personality_assign(int);//Evan function
-string get_user(); //Zander function
+int personality_calc(int*,int, int*);  //Evan function
+string personality_assign(int);  //Evan function
+string get_user();  //Zander function
 int main()
 {
   srand (time(0));
   int choice=0;
 
     do{
-    int question_array[SIZE]  = {4,4,4,4,2,2,5,3,2,2}; //delete array values
+
+    int question_array[SIZE] = {1,2,2,3,3,3,3,5,1,1}; //delete array values
     int personality_array[5]= {0,0,0,0,0};
     int personality_num = 0;
     string name, personality;
@@ -53,11 +58,26 @@ int main()
     return 0;
 }
 
+      
+    /**************************\
+    |        FUNCTIONS         |
+    \**************************/
+
+/*
+ *      FUNCTION: get_user()
+ *      DESCRIPTION: 
+ */
+
 string get_user()
 {
 
 
 }
+
+/*
+ *      FUNCTION: personality_quiz()
+ *      DESCRIPTION: 
+ */
 
 void personality_quiz(int* q_array,int SIZE, string name)
 {
@@ -67,6 +87,7 @@ void personality_quiz(int* q_array,int SIZE, string name)
     // 4) alan, deadpan, dry humor, cares about his job
     // 5) the boss, whacky, evil?, REALLY cares about his comapny
     
+    //QUESTION ONE
     cout << "\nLet's start the quiz now " << name << "!" << endl;
     cout << "QUESTION 1" << endl;
     cout << name << ", the company you work for has new competition. It seems like they are doing the complete opposite of what your company does, and frankly, are quite evil." << endl;
@@ -79,6 +100,7 @@ void personality_quiz(int* q_array,int SIZE, string name)
     cout << "Answer: ";
     //cin  >> q_array[0];
 
+    //QUESTION TWO
     cout << "QUESTION 2" << endl;
     cout << name << ",It is a tight race in the presidential vote. The two Candiates are President Jimble and Mr. Frog." << endl;
     cout << "Who are you going to vote for, " << name << "?" << endl;
@@ -90,6 +112,7 @@ void personality_quiz(int* q_array,int SIZE, string name)
     cout << "Answer: ";
     //cin  >> q_array[1];
 
+    //QUESTION THREE
     cout << "QUESTION 3" << endl;
     cout << name << "If you could describe yourself in one word what would it be?" << endl;
     cout << "1) ielinutle." << endl;
@@ -100,6 +123,7 @@ void personality_quiz(int* q_array,int SIZE, string name)
     cout << "Answer: ";
     //cin  >> q_array[2];
 
+    //QUESTION FOUR
     cout << "QUESTION 4" << endl;
     cout << name << ", if you could describe your physcial appearance in an Adult Swim animated TV show created by Zach Hadel and Michael Cusack, what would it look like?" << endl;
     cout << "1) A small green creature with a purple hat that speaks a language only understandable by characters in the show." << endl;
@@ -110,6 +134,7 @@ void personality_quiz(int* q_array,int SIZE, string name)
     cout << "Answer: ";
     //cin  >> q_array[3];
 
+    //QUESTION FIVE
     cout << "QUESTION 5" << endl;
     cout << name << ", out of the choices below which food would you eat?" << endl; 
     cout << "1) Coffee and french fries." << endl;
@@ -120,6 +145,7 @@ void personality_quiz(int* q_array,int SIZE, string name)
     cout << "Answer: ";
     //cin  >> q_array[4];
 
+    //QUESTION SIX
     cout << "QUESTION 6" << endl;
     cout << name << ", out of the choices below which activity would you wanna do?" << endl; 
     cout << "1) Replacing the famous star Mr Frog on the Mr Frog Show." << endl;
@@ -130,6 +156,7 @@ void personality_quiz(int* q_array,int SIZE, string name)
     cout << "Answer: ";
     //cin  >> q_array[5];
 
+    //QUESTION SEVEN
     cout << "QUESTION 7" << endl;
     cout << name << ", which Smiling Friend do you think you are?" << endl; 
     cout << "1) Glep." << endl;
@@ -140,6 +167,7 @@ void personality_quiz(int* q_array,int SIZE, string name)
     cout << "Answer: ";
     //cin  >> q_array[6];
 
+    //QUESTION EIGHT
     cout << "QUESTION 8" << endl;
     cout << name << ", what would you do if a snowman you created came to life?" << endl; 
     cout << "1) olhear esûdait hþinfagiv dtyaiwƶ aseset lewyæ." << endl;
@@ -150,6 +178,7 @@ void personality_quiz(int* q_array,int SIZE, string name)
     cout << "Answer: ";
     //cin  >> q_array[7];
 
+    //QUESTION NINE
     cout << "QUESTION 9" << endl;
     cout << name << ", who killed Simon S. Salty?" << endl; 
     cout << "1) Mr. Ketchup" << endl;
@@ -160,6 +189,7 @@ void personality_quiz(int* q_array,int SIZE, string name)
     cout << "Answer: ";
     //cin  >> q_array[8];
 
+    //QUESTION TEN
     cout << "QUESTION 10" << endl;
     cout << name << ", what would dress up as for Halloween?" << endl; 
     cout << "1) Matching costumes as Ronald and Nancy Reagan." << endl;
@@ -174,6 +204,10 @@ void personality_quiz(int* q_array,int SIZE, string name)
  
 }
 
+/*
+ *      FUNCTION: personality_calc()
+ *      DESCRIPTION: 
+ */
 
 int personality_calc(int* q_array,int SIZE, int* p_array) //calcs personliaty based on which persoanlity you answered the most, i.e. mode
 {
@@ -261,7 +295,12 @@ int personality_calc(int* q_array,int SIZE, int* p_array) //calcs personliaty ba
     
 }
 
-string personality_assign (int p_num) //assigns a personality based on the number value from personality_calc
+/*
+ *      FUNCTION: personality_assign()
+ *      DESCRIPTION: 
+ */
+
+string personality_assign (int p_num)
 {
 
     if (p_num == 1)
