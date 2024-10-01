@@ -34,13 +34,13 @@ void Info::setinfo(string firstName,string lastName,string email,string phoneNum
     this->email = email;
     this->phoneNum = phoneNum;
 
-    Infofile.open("Quiz_Taker_Info.txt");
+    Infofile.open("Quiz_Taker_Info.txt", fstream::app);
     if(Infofile.is_open())
     {
         Infofile <<this->firstName <<"#";
         Infofile << this->lastName<<"#";
         Infofile << this->email<<"#";
-        Infofile << this->phoneNum<<"#";
+        Infofile << this->phoneNum<<endl;
     }
     else
     {
