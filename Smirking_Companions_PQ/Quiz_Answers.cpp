@@ -1,6 +1,6 @@
 /* 
  *  NAME: Ty Ahrens
- *  DATE: 10/1/24
+ *  DATE: 10/2/24
  *  DESCRIPTION: Class that goes to calculate the
  *               percentages of quiz takers that have responded to each
  *               answer previously in answers.txt. This also goes to write
@@ -14,8 +14,30 @@
  *      FUNCTION: getAnswers()
  *      DESCRIPTION: WIP
  */
-void Answers::getAnswers(){
+void Answers::getAnswers(int* answersPtr){
+    int totalResponses, answer;
 
+    answerFile.open("answers.txt");
+    if (answerFile.is_open()){
+        while (answerFile.eof())
+            totalResponses++;  
+    
+        totalResponses = totalResponses/2;
+        answersPtr = new int [totalResponses];
+
+        while (answerFile.eof()){
+            getline(answerFile, totalResponses, ",");
+        }
+    
+    }    
+}
+
+/*
+ *      FUNCTION: removeAnswersPtr()
+ *      DESCRIPTION: deletes answer pointer
+ */
+void Answers::removeAnswersPtr(int* answersPtr){
+    delete [] answersPtr;
 }
 
 /*
@@ -26,8 +48,8 @@ void Answers::getAnswers(){
 
 void Answers::storeAnswers(int userResponse){
     answerFile.open("answers.txt");     //open answers.txt file
-    answerFile >> userResponse;     //place answer from questions sent from main into answers text file
-    answerFile >> ",";      //add delimiter to space out the answers
+    answerFile << userResponse;     //place answer from questions sent from main into answers text file
+    answerFile << ",";      //add delimiter to space out the answers
     answerFile.ignore();
     answerFile.close();     //close answers.txt file
 }

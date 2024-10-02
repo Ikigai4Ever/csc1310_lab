@@ -12,6 +12,8 @@
 #define QUIZ_ANSWERS_H
 
 #include <fstream>
+#include <string>
+using namespace std;
 
 class Answers{
     private:
@@ -19,8 +21,10 @@ class Answers{
 
     public:
         int *questionsPtr;           //questions pointer for allocated questions array to calculate percentages
-        void Answers::getAnswers();         //definition to function getAnswers()
+        void Answers::getAnswers(int*);         //definition to function getAnswers()
+        void Answers::removeAnswersPtr(int*);   //definition to function removeAnswers()
         void Answers::storeAnswers(int);    //definition to function storeAnswers()
+
 };
 
 #endif
