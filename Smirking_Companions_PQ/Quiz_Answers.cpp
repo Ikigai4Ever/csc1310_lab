@@ -15,7 +15,8 @@
  *      DESCRIPTION: WIP
  */
 void Answers::getAnswers(int* answersPtr){
-    int totalResponses, answer;
+    int totalResponses = 0, answerNum = 0; 
+    std::string answer;
 
     answerFile.open("answers.txt");
     if (answerFile.is_open()){
@@ -26,7 +27,9 @@ void Answers::getAnswers(int* answersPtr){
         answersPtr = new int [totalResponses];
 
         while (answerFile.eof()){
-            getline(answerFile, totalResponses, ",");
+            getline(answerFile, answer, ',');
+            answersPtr[answerNum] = stoi(answer);
+            answerNum++;
         }
     
     }    
