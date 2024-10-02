@@ -1,14 +1,14 @@
 /* 
  *  NAME: Christopher Bowman
- *  DATE: 9/18/2024
+ *  DATE: 10/2/2024
  *  DESCRIPTION: Calls get_info for Quiz_Taker_Info, Sends get_info to Quiz_Taker_Info, Calls personality_quiz, 
  *  Sends indvidual answers to Answers_class, Sends Personality to Quiz_taker_info 
  *  PROGRAM: Driver.cpp
  */
 
 //#include "Personalities.h"
-//#include "Quiz_Answers.h"
-//#include "Quiz_Taker_Info.h"
+#include "Quiz_Answers.h"
+#include "Quiz_Taker_Info.h"
 #include <iostream>
 #include <iomanip>
 #include<time.h>
@@ -19,43 +19,45 @@ using namespace std;
 const int SIZE = 10;
 
 /***********************  FUNCTION PROTOTYPES ************************/
-int validate_user(int, int, int); //Evan function
-void personality_quiz(int*, int, string, int, int); //Evan function
-int personality_calc(int*, int, int*);  //Evan function
-void print_personality(int);
-string personality_assign(int);  //Evan function
-string get_user();  //Zander function
+int validate_user(int, int, int); //validates user input
+void personality_quiz(int*, int, string, int, int); //actual quiz
+int personality_calc(int*, int, int*);  //calculates which personality you are
+void print_personality(int);// prints your personality
+string personality_assign(int); //assigns your personality
+
 
 int main()
 {
-  srand (time(0));
-  int choice=0;
+  srand (time(0)); //generates random seed
+  int choice=0; // choice for begining of program
 
     do{
-    int min=0,max=0;
-    int question_array[SIZE];
-    int personality_array[5]= {0,0,0,0,0};
-    int personality_num = 0;
-    string name, personality;
+    int min=0,max=0; //min and max value for user validation
+    int question_array[SIZE]; //stores question answers
+    int personality_array[5]= {0,0,0,0,0}; //stores frequency of answers
+    int personality_num = 0; //number value of what your personality is
+    string personality; //word value of your personality
 
 
 
     cout << "\n\nHELLO! Welcome to the Smirking Companions persoanlity quiz!" << endl;
     cout << "1) Begin quiz" << endl << "2) End program" << endl;
-    cin >> choice;
-    while (choice != 1 && choice !=2)
+    cin >> choice; //input for starting or ending program
+
+    while (choice != 1 && choice !=2) //user validation choice has to be 1 or 2
     {
-      min = 1;
-      max = 2;
-      choice = validate_user(choice,min,max);
+      min = 1; //setting min
+      max = 2; //setting max
+      choice = validate_user(choice,min,max); //calls user validation
     }
 
-    if (choice == 2)
+    if (choice == 2) //if choice is 2 begin program
     break;
     cout << "The purpose of this program is to find out which Smirking Companion YOU are."<< endl; 
     cout << "Lets's begin!" << endl;
     
-    name = get_user();
+    // put zander set info right here and change all names
+
     personality_quiz(question_array, SIZE, name,min,max);
     personality_num = personality_calc(question_array, SIZE, personality_array);
     print_personality(personality_num);
