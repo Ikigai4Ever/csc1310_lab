@@ -38,4 +38,6 @@ string Info::getinfo()
     {
         cout << "Couldn't find the text file." << endl;
     }
+
+    return firstName;
 }
