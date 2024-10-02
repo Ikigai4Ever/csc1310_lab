@@ -22,7 +22,7 @@ class Info
         string email;
         string phoneNum;
     public:
-        void setinfo(string,string,string,string);
+        string getinfo();
 
 };
 
