@@ -1,6 +1,6 @@
 /* 
  *  NAME: Christopher Bowman
- *  DATE: 9/18/2024
+ *  DATE: 10/2/2024
  *  DESCRIPTION: Calls get_info for Quiz_Taker_Info, Sends get_info to Quiz_Taker_Info, Calls personality_quiz, 
  *  Sends indvidual answers to Answers_class, Sends Personality to Quiz_taker_info 
  *  PROGRAM: Driver.cpp
@@ -19,9 +19,9 @@ using namespace std;
 const int SIZE = 10;
 
 /***********************  FUNCTION PROTOTYPES ************************/
-int validate_user(int, int, int); //Evan function
-void personality_quiz(int*, int, string, int, int); //Evan function
-int personality_calc(int*, int, int*);  //Evan function
+int validate_user(int, int, int); //validates user input
+void personality_quiz(int*, int, string, int, int); //the actual quiz
+int personality_calc(int*, int, int*);  //calculates which personality you are
 void print_personality(int);
 string personality_assign(int);  //Evan function
 string get_user();  //Zander function
