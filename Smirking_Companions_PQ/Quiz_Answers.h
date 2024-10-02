@@ -11,31 +11,10 @@
 
 class Answers{
     private:
-        int questionsPtr;           //questions pointer for allocated questions array to calculate percentages
         std::fstream answerFile;    //file that all of the previous answers are stored in
 
     public:
+        int *questionsPtr;           //questions pointer for allocated questions array to calculate percentages
         void Answers::getAnswers();         //definition to function getAnswers()
         void Answers::storeAnswers(int);    //definition to function storeAnswers()
 };
-
-/*
- *      FUNCTION: getAnswers()
- *      DESCRIPTION: WIP
- */
-void Answers::getAnswers(){
-
-}
-
-/*
- *      FUNCTION: storeAnswers()
- *      DESCRIPTION: Store all of the answers that the user puts down 
- *                   in the personality quiz in the answers.txt file
- */
-
-void Answers::storeAnswers(int userResponse){
-    answerFile.open("answers.txt");
-    answerFile >> userResponse;
-    answerFile.ignore();
-    answerFile.close();
-}
