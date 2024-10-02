@@ -28,9 +28,7 @@ int main()
   srand (time(0));
   int choice=0;
 
-
     do{
-    int question_array[SIZE]  = {4,4,4,4,2,2,5,3,2,2}; //delete array values
 
     int question_array[SIZE] = {1,2,2,3,3,3,3,5,1,1}; //delete array values
     int personality_array[5]= {0,0,0,0,0};
@@ -267,7 +265,44 @@ int personality_calc(int* q_array,int SIZE, int* p_array) //calcs personliaty ba
 
     if (t_size == 1) //there are no ties retuen the index with the highest number
     return p_index+ 1;
-    // either 2 are equal, 3 are equal, or 5 are equal
+
+    else //there are ties
+    {
+        
+        int* tie_array= new int [t_size]; //creates an array that will be the size of the ties, i.e one tie is size 2
+
+        for (int i = 0; i < t_size;i++) //intiliazes the tie_array to 0
+        {
+            tie_array[i] = 0;
+        }
+        
+        for (int i = 0; i < 5; i++) //populates the tie_array
+        {
+            
+            if (highest == p_array[i]) //checks which index is equal to the highest
+            {
+    
+                tie_array[t_index] = i+1; //places that index plus 1 into the value of the tie_array
+                
+                t_index++;
+                
+            }
+             
+
+        }
+
+        rnum = rand() % (t_size);    //generates a range from t_size to 0
+           
+        p_index = tie_array[rnum];
+
+        delete[] tie_array; //release memory
+        
+        return p_index;
+        
+        
+
+    }
+    
 }
 
 /*
