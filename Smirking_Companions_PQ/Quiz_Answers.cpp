@@ -5,8 +5,9 @@
  *               percentages of quiz takers that have responded to each
  *               answer previously in answers.txt. This also goes to write
  *               each answer into the answers.txt file
- *  PROGRAM: Quiz_Answers.h
+ *  PROGRAM: Quiz_Answers.cpp
  */
+
 #include "Quiz_Answers.h"
 
 /*
