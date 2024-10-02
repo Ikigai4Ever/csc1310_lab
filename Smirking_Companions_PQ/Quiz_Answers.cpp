@@ -1,21 +1,13 @@
 /* 
  *  NAME: Ty Ahrens
- *  DATE: 9/25/24
- *  DESCRIPTION: Save quiz answers to questions array, 
- *  PROGRAM: Quiz_Answers.cpp
+ *  DATE: 10/1/24
+ *  DESCRIPTION: Class that goes to calculate the
+ *               percentages of quiz takers that have responded to each
+ *               answer previously in answers.txt. This also goes to write
+ *               each answer into the answers.txt file
+ *  PROGRAM: Quiz_Answers.h
  */
-#include <fstream>
-
-class Answers{
-    private:
-        int questions[10];
-        std::fstream answerFile;
-
-    public:
-        int *questionsptr = questions;
-        void Answers::getAnswers();
-        void Answers::storeAnswers(int);
-};
+#include "Quiz_Answers.h"
 
 /*
  *      FUNCTION: getAnswers()
@@ -32,8 +24,9 @@ void Answers::getAnswers(){
  */
 
 void Answers::storeAnswers(int userResponse){
-    answerFile.open("answers.txt");
-    answerFile >> userResponse;
+    answerFile.open("answers.txt");     //open answers.txt file
+    answerFile >> userResponse;     //place answer from questions sent from main into answers text file
+    answerFile >> ",";      //add delimiter to space out the answers
     answerFile.ignore();
-    answerFile.close();
+    answerFile.close();     //close answers.txt file
 }
