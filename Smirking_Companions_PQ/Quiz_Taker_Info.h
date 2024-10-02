@@ -16,13 +16,15 @@ using namespace std;
 //class decleration for quiz taker's info
 class Info
 {
-    private:
+    public:
         string firstName;
         string lastName;
         string email;
         string phoneNum;
-    public:
-        string getinfo();
+
+
+        //Get info
+        string getInfo();
 
 };
 
