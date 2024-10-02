@@ -12,7 +12,10 @@
 
 /*
  *      FUNCTION: getAnswers()
- *      DESCRIPTION: WIP
+ *      DESCRIPTION: Get the number of answers from the answers.txt 
+ *                   file and dynamically allocate a new array to store
+ *                   each number previously answered to calculate 
+ *                   percentages
  */
 void Answers::getAnswers(int* answersPtr){
     int totalResponses = 0, answerNum = 0; 
@@ -20,24 +23,25 @@ void Answers::getAnswers(int* answersPtr){
 
     answerFile.open("answers.txt");
     if (answerFile.is_open()){
+        //get the number of responses from the program
         while (answerFile.eof())
             totalResponses++;  
     
-        totalResponses = totalResponses/2;
-        answersPtr = new int [totalResponses];
+        totalResponses = totalResponses/2; //divide number of entries by 2 because of commas
+        answersPtr = new int [totalResponses];  //dynamically allocate new array based on total responses previously recorded
 
+        //store each number into answersPtr array
         while (answerFile.eof()){
             getline(answerFile, answer, ',');
             answersPtr[answerNum] = stoi(answer);
             answerNum++;
         }
-    
     }    
 }
 
 /*
  *      FUNCTION: removeAnswersPtr()
- *      DESCRIPTION: deletes answer pointer
+ *      DESCRIPTION: Deletes answer pointer
  */
 void Answers::removeAnswersPtr(int* answersPtr){
     delete [] answersPtr;
