@@ -8,10 +8,19 @@
 #include "Quiz_Taker_Info.h"
 
 //set info function so I can get the info from the user and record it to the text file
-void Info::setinfo(string firstName,string lastName,string email,string phoneNum)
+string Info::getinfo()
 {
     fstream Infofile;
-
+    //Collecting the info from the user
+    cout << "\nWhat's your First name?   :";
+    getline(cin,firstName);
+    cout << "\nWhat's your Last Name? :";
+    getline(cin,lastName);
+    cout << "\nWhat's your Email? :";
+    getline(cin,email);
+    cout << "\nWhat's your Phone number? :";
+    getline(cin,phoneNum);
+    //setting the info to the class
     this->firstName = firstName;
     this->lastName = lastName;
     this->email = email;
