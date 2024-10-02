@@ -1,6 +1,6 @@
 /* 
  *  NAME: Ty Ahrens
- *  DATE: 10/1/24
+ *  DATE: 9/28/24
  *  DESCRIPTION: Class that goes to calculate the
  *               percentages of quiz takers that have responded to each
  *               answer previously in answers.txt. This also goes to write
