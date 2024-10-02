@@ -101,6 +101,7 @@ void personality_quiz(int* q_array,int SIZE, string name)
     cout << "5) Consult my board of shady and corrupt advisors and then \"get rid\" of the compitetion." << endl;
     cout << "Answer: ";
     //cin  >> q_array[0];
+    //storeAnswers(q_array[0]);
 
     //QUESTION TWO
     cout << "QUESTION 2" << endl;
@@ -113,6 +114,7 @@ void personality_quiz(int* q_array,int SIZE, string name)
     cout << "5) Why of course I voted for President Jimble! I got a 10,000 bet he will win! If he doesn't win there will be repercussions." << endl;
     cout << "Answer: ";
     //cin  >> q_array[1];
+    //storeAnswers(q_array[1]);
 
     //QUESTION THREE
     cout << "QUESTION 3" << endl;
@@ -124,6 +126,7 @@ void personality_quiz(int* q_array,int SIZE, string name)
     cout << "5) Eccentric." << endl;
     cout << "Answer: ";
     //cin  >> q_array[2];
+    //storeAnswers(q_array[2]);
 
     //QUESTION FOUR
     cout << "QUESTION 4" << endl;
@@ -135,6 +138,7 @@ void personality_quiz(int* q_array,int SIZE, string name)
     cout << "5) A 60-70 year old man with a horseshoe baldspot that is covered with a mismatching toupee." << endl;
     cout << "Answer: ";
     //cin  >> q_array[3];
+    //storeAnswers(q_array[3]);
 
     //QUESTION FIVE
     cout << "QUESTION 5" << endl;
@@ -146,6 +150,7 @@ void personality_quiz(int* q_array,int SIZE, string name)
     cout << "5) A warm plate of Spaghetti." << endl;
     cout << "Answer: ";
     //cin  >> q_array[4];
+    //storeAnswers(q_array[4]);
 
     //QUESTION SIX
     cout << "QUESTION 6" << endl;
@@ -157,6 +162,7 @@ void personality_quiz(int* q_array,int SIZE, string name)
     cout << "5) Visit Spamtopia to buy a Magical Red Jewel for your son Tyler." << endl;
     cout << "Answer: ";
     //cin  >> q_array[5];
+    //storeAnswers(q_array[5]);
 
     //QUESTION SEVEN
     cout << "QUESTION 7" << endl;
@@ -168,6 +174,7 @@ void personality_quiz(int* q_array,int SIZE, string name)
     cout << "5) The Boss" << endl;
     cout << "Answer: ";
     //cin  >> q_array[6];
+    //storeAnswers(q_array[6]);
 
     //QUESTION EIGHT
     cout << "QUESTION 8" << endl;
@@ -179,6 +186,7 @@ void personality_quiz(int* q_array,int SIZE, string name)
     cout << "5) Destroy the snowman because of its newfound consciousness." << endl;
     cout << "Answer: ";
     //cin  >> q_array[7];
+    //storeAnswers(q_array[7]);
 
     //QUESTION NINE
     cout << "QUESTION 9" << endl;
@@ -190,6 +198,7 @@ void personality_quiz(int* q_array,int SIZE, string name)
     cout << "5) Crazy Cup." << endl;
     cout << "Answer: ";
     //cin  >> q_array[8];
+    //storeAnswers(q_array[8]);
 
     //QUESTION TEN
     cout << "QUESTION 10" << endl;
@@ -201,6 +210,7 @@ void personality_quiz(int* q_array,int SIZE, string name)
     cout << "5) Charlie Brown." << endl;
     cout << "Answer: ";
     //cin  >> q_array[9]; 
+    //storeAnswers(q_array[9]);
 
 
  
