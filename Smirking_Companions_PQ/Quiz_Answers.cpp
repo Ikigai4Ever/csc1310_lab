@@ -24,8 +24,9 @@ void Answers::getAnswers(){
  */
 
 void Answers::storeAnswers(int userResponse){
-    answerFile.open("answers.txt");
-    answerFile >> userResponse;
+    answerFile.open("answers.txt");     //open answers.txt file
+    answerFile >> userResponse;     //place answer from questions sent from main into answers text file
+    answerFile >> ",";      //add delimiter to space out the answers
     answerFile.ignore();
-    answerFile.close();
+    answerFile.close();     //close answers.txt file
 }
