@@ -124,6 +124,7 @@ void personality_quiz(int* q_array,int SIZE, string name,int min,int max)
     {
       q_array[0] = validate_user(q_array[0],min,max);
     }
+    storeAnswers(q_array[0]);
     cout << endl;
 
     //QUESTION TWO
@@ -141,6 +142,7 @@ void personality_quiz(int* q_array,int SIZE, string name,int min,int max)
     {
       q_array[1] = validate_user(q_array[1],min,max);
     }
+    storeAnswers(q_array[1]);
     cout << endl;
 
     //QUESTION THREE
@@ -157,6 +159,7 @@ void personality_quiz(int* q_array,int SIZE, string name,int min,int max)
     {
       q_array[2] = validate_user(q_array[2],min,max);
     }
+    storeAnswers(q_array[2]);
     cout << endl;
 
     //QUESTION FOUR
@@ -173,6 +176,7 @@ void personality_quiz(int* q_array,int SIZE, string name,int min,int max)
     {
       q_array[3] = validate_user(q_array[3],min,max);
     }
+    storeAnswers(q_array[3]);
     cout << endl;
 
     //QUESTION FIVE
@@ -189,6 +193,7 @@ void personality_quiz(int* q_array,int SIZE, string name,int min,int max)
     {
       q_array[4] = validate_user(q_array[4],min,max);
     }
+    storeAnswers(q_array[4]);
     cout << endl;
 
     //QUESTION SIX
@@ -205,6 +210,7 @@ void personality_quiz(int* q_array,int SIZE, string name,int min,int max)
     {
       q_array[5] = validate_user(q_array[5],min,max);
     }
+    storeAnswers(q_array[5]);
     cout << endl;
 
     //QUESTION SEVEN
@@ -221,6 +227,7 @@ void personality_quiz(int* q_array,int SIZE, string name,int min,int max)
     {
       q_array[6] = validate_user(q_array[6],min,max);
     }
+    storeAnswers(q_array[6]);
     cout << endl;
 
     //QUESTION EIGHT
@@ -237,6 +244,7 @@ void personality_quiz(int* q_array,int SIZE, string name,int min,int max)
     {
       q_array[7] = validate_user(q_array[7],min,max);
     }
+    storeAnswers(q_array[7]);
     cout << endl;
 
     //QUESTION NINE
@@ -253,6 +261,7 @@ void personality_quiz(int* q_array,int SIZE, string name,int min,int max)
     {
       q_array[8] = validate_user(q_array[8],min,max);
     }
+    storeAnswers(q_array[8]);
     cout << endl;
 
     //QUESTION TEN
@@ -269,6 +278,7 @@ void personality_quiz(int* q_array,int SIZE, string name,int min,int max)
     {
       q_array[9] = validate_user(q_array[9],min,max);
     }
+    storeAnswers(q_array[9]);
     cout << endl; 
 
 
