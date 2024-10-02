@@ -1,30 +1,13 @@
 /* 
  *  NAME: Zander Underwood
- *  DATE:  9/27/24
+ *  DATE:  10/2/24
  *  DESCRIPTION:    Store the people who take the test's information (first and last name, email, phone number) along with what they scored on the personality.
  *  PROGRAM: Quiz_Taker_Info.cpp
  */
 
-#include <iostream>
-#include <string>
-#include <fstream>
-using namespace std;
-
 #include "Quiz_Taker_Info.h"
 
-//class decleration for quiz taker's info
-class Info
-{
-    private:
-        string firstName;
-        string lastName;
-        string email;
-        string phoneNum;
-    public:
-        void setinfo(string,string,string,string);
-
-};
-
+//set info function so I can get the info from the user and record it to the text file
 void Info::setinfo(string firstName,string lastName,string email,string phoneNum)
 {
     fstream Infofile;
@@ -35,7 +18,7 @@ void Info::setinfo(string firstName,string lastName,string email,string phoneNum
     this->phoneNum = phoneNum;
 
     Infofile.open("Quiz_Taker_Info.txt", fstream::app);
-    if(Infofile.is_open())
+    if(Infofile.is_open())                                  //Making sure the text file is opening
     {
         Infofile <<this->firstName <<"#";
         Infofile << this->lastName<<"#";
