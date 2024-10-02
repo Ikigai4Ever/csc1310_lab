@@ -8,31 +8,40 @@
 #include "Quiz_Taker_Info.h"
 
 //set info function so I can get the info from the user and record it to the text file
-string Info::getinfo()
+string Info::getInfo()
 {
     fstream Infofile;
+    Info* person;
+    string* infoArray[] = {&firstName,&lastName,&email,&phoneNum};
+   
+
     //Collecting the info from the user
     cout << "\nWhat's your First name?   :";
     getline(cin,firstName);
+    infoArray[0] = &firstName;
     cout << "\nWhat's your Last Name? :";
     getline(cin,lastName);
+    infoArray[1] = &lastName;
     cout << "\nWhat's your Email? :";
     getline(cin,email);
+    infoArray[2] = &email;
     cout << "\nWhat's your Phone number? :";
     getline(cin,phoneNum);
-    //setting the info to the class
-    this->firstName = firstName;
-    this->lastName = lastName;
-    this->email = email;
-    this->phoneNum = phoneNum;
+    infoArray[3] = &phoneNum;
+
+    person->firstName = firstName;
+    person->lastName = lastName;
+    person->email = email;
+    person->phoneNum = phoneNum;
+
 
     Infofile.open("Quiz_Taker_Info.txt", fstream::app);
     if(Infofile.is_open())                                  //Making sure the text file is opening
     {
-        Infofile <<this->firstName <<"#";
-        Infofile << this->lastName<<"#";
-        Infofile << this->email<<"#";
-        Infofile << this->phoneNum<<endl;
+        Infofile << firstName <<"#";
+        Infofile << lastName<<"#";
+        Infofile << email<<"#";
+        Infofile << phoneNum<<endl;
     }
     else
     {
