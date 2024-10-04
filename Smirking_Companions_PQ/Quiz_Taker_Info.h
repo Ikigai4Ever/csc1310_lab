@@ -17,16 +17,13 @@ using namespace std;
 class Info
 {
     public:
-        string firstName;
-        string lastName;
-        string email;
-        string phoneNum;
-
-        string* infoArray[4];
-        string** dblpntr = infoArray;
-
-        //Get info
-        string getInfo();
+        string** infoArray;
+        
+        
+        void makeInfo(); //constructer
+        void getInfo(); //gets information on quiztaker
+        void delInfo(); //deconstructer
+        string* getname(int); //gets first name
 
 };
 

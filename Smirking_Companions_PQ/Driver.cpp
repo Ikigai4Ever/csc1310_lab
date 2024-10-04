@@ -9,10 +9,10 @@
 //#include "Personalities.h"
 #include "Quiz_Answers.h"
 #include "Quiz_Taker_Info.h"
-#include <iostream>
-#include <iomanip>
+
+
 #include<time.h>
-using namespace std;
+
 
 
 /************************  GLOBAL VARIABLES **************************/
@@ -28,6 +28,7 @@ string personality_assign(int); //assigns your personality
 
 int main()
 {
+  Info person;
   srand (time(0)); //generates random seed
   int choice=0; // choice for begining of program
 
@@ -57,8 +58,10 @@ int main()
     cout << "Lets's begin!" << endl;
     
     // put zander set info right here and change all names
+    person.makeInfo();
+    person.getInfo();
 
-    personality_quiz(question_array, SIZE, name,min,max);
+    personality_quiz(question_array, SIZE,*(person.getname(0)),min,max);
     personality_num = personality_calc(question_array, SIZE, personality_array);
     print_personality(personality_num);
     personality = personality_assign(personality_num);
@@ -67,6 +70,9 @@ int main()
     }while (choice != 2);
 
     cout << "Goodbye!" << endl;
+
+    person.delInfo();
+
     return 0;
 }
 /**************************\
@@ -86,18 +92,7 @@ int validate_user(int choice,int min,int max)
 }
 
       
-    
 
-/*
- *      FUNCTION: get_user()
- *      DESCRIPTION: 
- */
-
-string get_user()
-{
-return "Evan";
-
-}
 
 /*
  *      FUNCTION: personality_quiz()
