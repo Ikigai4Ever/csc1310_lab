@@ -113,6 +113,8 @@ void personality_quiz(int* q_array,int SIZE, string name,int min,int max)
     Answers quizTaker; //object for Answer class
     min = 1; //set limits for user validation
     max = 5; //set limits for user validation
+    
+    quizTaker.getAnswers(quizTaker.answersPtr);
 
     //QUESTION ONE
     cout << "\nLet's start the quiz now " << name << "!" << endl << endl;
