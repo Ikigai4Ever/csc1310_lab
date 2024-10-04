@@ -22,6 +22,8 @@ class Info
         string email;
         string phoneNum;
 
+        string* infoArray[4];
+        string** dblpntr = infoArray;
 
         //Get info
         string getInfo();
