@@ -12,15 +12,14 @@ string Info::getInfo()
 {
     fstream Infofile;
     Info person;
-    string* infoArray[4];
+    
    
    infoArray[0] = new string (firstName);
    infoArray[1] = new string (lastName);
    infoArray[2] = new string (email);
    infoArray[3] = new string (phoneNum);
 
-   string** dblpntr = infoArray;
-
+   
     //Collecting the info from the user
     cout << "\nWhat's your First name?   :";
     getline(cin,firstName);
