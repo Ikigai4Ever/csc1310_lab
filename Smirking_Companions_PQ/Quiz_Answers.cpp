@@ -37,7 +37,7 @@ void Answers::printAnswers(int* answersPtr){
  */
 
 void Answers::storeAnswers(int userResponse){
-    answerFile.open("answers.txt");     //open answers.txt file
+    answerFile.open("answers.txt", std::ofstream::app);     //open answers.txt file
     answerFile << userResponse;     //place answer from questions sent from main into answers text file
     answerFile << ",";      //add delimiter to space out the answers
     answerFile.ignore();
@@ -55,7 +55,7 @@ Answers::Answers(){
     int totalResponses = 0, answerNum = 0; 
     std::string answer;
 
-    answerFile.open("answers.txt");
+    answerFile.open("answers.txt", std::ifstream::app);
     if (answerFile.is_open()){
         //get the number of responses from the program
         while (answerFile.eof())
