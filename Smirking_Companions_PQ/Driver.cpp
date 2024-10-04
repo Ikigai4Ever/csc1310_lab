@@ -58,7 +58,6 @@ int main()
     cout << "Lets's begin!" << endl;
     
     // put zander set info right here and change all names
-    person.makeInfo(); //constructer creates double pointer string pointer array
     person.getInfo(); //asks user for information and writes it to a txt file
 
     personality_quiz(question_array, SIZE,*(person.getname(0)),min,max); //calls personality quiz to populat question array
@@ -79,8 +78,6 @@ int main()
     }while (choice != 2); //do while loop so if 2 is chosen for choice it ends program
 
     cout << "Goodbye!" << endl;
-
-    person.delInfo(); //releases the dynamic alloaction of the double pointer string pointer array
 
     return 0;
 }
