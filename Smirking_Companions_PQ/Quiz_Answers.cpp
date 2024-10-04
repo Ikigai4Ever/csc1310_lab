@@ -69,6 +69,6 @@ Answers::Answers(int* answersPtr){
  *      DESCRIPTION: Deconstructor for Answers class
  */
 Answers::~Answers(){
-    delete [] questionsPtr;
+    delete [] answersPtr;
     std::cout << "\nDynamic memory for Quiz Answers has been released.\n";
 }

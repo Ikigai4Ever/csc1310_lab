@@ -20,7 +20,7 @@ class Answers{
         std::fstream answerFile;     //file that all of the previous answers are stored in
 
     public:
-        int *questionsPtr;           //questions pointer for allocated questions array to calculate percentages
+        int *answersPtr;           //answers pointer for allocated questions array to calculate percentages
         void printAnswers(int*);     //definition to function printAnswers()
         void storeAnswers(int);      //definition to function storeAnswers()
 
