@@ -21,7 +21,7 @@ class Info
         
         
         void makeInfo(); //constructer
-        void getInfo(); //gets information on quiztaker
+        void getInfo(); //gets information on quiztaker and stores it in txt file
         void delInfo(); //deconstructer
         string* getname(int); //gets first name
 

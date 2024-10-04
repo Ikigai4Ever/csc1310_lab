@@ -6,11 +6,9 @@
  *  PROGRAM: Driver.cpp
  */
 
-//#include "Personalities.h"
+#include "Personalities.h"
 #include "Quiz_Answers.h"
 #include "Quiz_Taker_Info.h"
-
-
 #include<time.h>
 
 
@@ -28,7 +26,8 @@ string personality_assign(int); //assigns your personality
 
 int main()
 {
-  Info person;
+  Info person; //person object
+  P_Percent user; //person user
   srand (time(0)); //generates random seed
   int choice=0; // choice for begining of program
 
@@ -38,6 +37,7 @@ int main()
     int personality_array[5]= {0,0,0,0,0}; //stores frequency of answers
     int personality_num = 0; //number value of what your personality is
     string personality; //word value of your personality
+    float percent=0; //percent of user who got your personality
 
 
 
@@ -58,20 +58,29 @@ int main()
     cout << "Lets's begin!" << endl;
     
     // put zander set info right here and change all names
-    person.makeInfo();
-    person.getInfo();
+    person.makeInfo(); //constructer creates double pointer string pointer array
+    person.getInfo(); //asks user for information and writes it to a txt file
 
-    personality_quiz(question_array, SIZE,*(person.getname(0)),min,max);
-    personality_num = personality_calc(question_array, SIZE, personality_array);
-    print_personality(personality_num);
-    personality = personality_assign(personality_num);
+    personality_quiz(question_array, SIZE,*(person.getname(0)),min,max); //calls personality quiz to populat question array
+    personality_num = personality_calc(question_array, SIZE, personality_array); // calls personality calc to get number value of persoanlity
+    print_personality(personality_num); //prints your personality based on num value 
+    personality = personality_assign(personality_num); //gives string personality value based on number value of personality
+
     cout <<"congratulations! You got " << personality << "!" << endl;
 
-    }while (choice != 2);
+
+    user.storePersonality(personality_num); //stores the number personality value in txt file
+    
+    percent = user.getPercent(personality_num); //calculates what percent of all users got your personality
+    
+
+    cout << percent << " % of quiz takers get " << personality << "!" << endl;
+
+    }while (choice != 2); //do while loop so if 2 is chosen for choice it ends program
 
     cout << "Goodbye!" << endl;
 
-    person.delInfo();
+    person.delInfo(); //releases the dynamic alloaction of the double pointer string pointer array
 
     return 0;
 }
@@ -101,9 +110,9 @@ int validate_user(int choice,int min,int max)
 
 void personality_quiz(int* q_array,int SIZE, string name,int min,int max)
 {
-    Answers quizTaker;
-    min = 1;
-    max = 5; 
+    Answers quizTaker; //object for Answer class
+    min = 1; //set limits for user validation
+    max = 5; //set limits for user validation
 
     //QUESTION ONE
     cout << "\nLet's start the quiz now " << name << "!" << endl << endl;
@@ -116,13 +125,15 @@ void personality_quiz(int* q_array,int SIZE, string name,int min,int max)
     cout << "4) Check to see if the opposing company has a better 401(k). " << endl;
     cout << "5) Consult my board of shady and corrupt advisors and then \"get rid\" of the compitetion." << endl;
     cout << "Answer: ";
-    cin  >> q_array[0];
-    while (q_array[0] < 1 || q_array[0] > 5)
+    cin  >> q_array[0]; //stores answer in question array
+    while (q_array[0] < 1 || q_array[0] > 5) //validates user input
     {
       q_array[0] = validate_user(q_array[0],min,max);
     }
-    quizTaker.storeAnswers(q_array[0]);
+    quizTaker.storeAnswers(q_array[0]); //stores answer in txt file
     cout << endl;
+    //this process of storing answer in question array, user validation, and storing answer in a txt file repeats for all 10 questions
+    
 
     //QUESTION TWO
     cout << "QUESTION 2" << endl;
