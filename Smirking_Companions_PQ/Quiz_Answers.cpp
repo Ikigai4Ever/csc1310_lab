@@ -40,14 +40,6 @@ void Answers::getAnswers(int* answersPtr){
 }
 
 /*
- *      FUNCTION: removeAnswersPtr()
- *      DESCRIPTION: Deletes answer pointer
- */
-void Answers::removeAnswersPtr(int* answersPtr){
-    delete answersPtr;
-}
-
-/*
  *      FUNCTION: storeAnswers()
  *      DESCRIPTION: Store all of the answers that the user puts down 
  *                   in the personality quiz in the answers.txt file
@@ -59,4 +51,13 @@ void Answers::storeAnswers(int userResponse){
     answerFile << ",";      //add delimiter to space out the answers
     answerFile.ignore();
     answerFile.close();     //close answers.txt file
+}
+
+/*
+ *      FUNCTION: ~Answers()
+ *      DESCRIPTION: Deconstructor
+ */
+Answers::~Answers(){
+    delete [] questionsPtr;
+    std::cout << "\nDynamic memory for Quiz Answers has been released.\n";
 }
