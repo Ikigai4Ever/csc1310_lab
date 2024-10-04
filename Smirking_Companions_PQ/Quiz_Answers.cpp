@@ -44,7 +44,7 @@ void Answers::getAnswers(int* answersPtr){
  *      DESCRIPTION: Deletes answer pointer
  */
 void Answers::removeAnswersPtr(int* answersPtr){
-    delete [] answersPtr;
+    delete answersPtr;
 }
 
 /*
