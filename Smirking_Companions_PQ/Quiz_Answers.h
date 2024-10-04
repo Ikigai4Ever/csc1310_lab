@@ -1,13 +1,18 @@
 /* 
  *  NAME: Ty Ahrens
- *  DATE: 9/28/24
+ *  DATE: 10/2/24
  *  DESCRIPTION: Class that goes to calculate the
  *               percentages of quiz takers that have responded to each
  *               answer previously in answers.txt. This also goes to write
  *               each answer into the answers.txt file
  *  PROGRAM: Quiz_Answers.h
  */
+
+#ifndef QUIZ_ANSWERS_H
+#define QUIZ_ANSWERS_H
+
 #include <fstream>
+#include <string>
 
 class Answers{
     private:
@@ -15,6 +20,10 @@ class Answers{
 
     public:
         int *questionsPtr;           //questions pointer for allocated questions array to calculate percentages
-        void Answers::getAnswers();         //definition to function getAnswers()
+        void Answers::getAnswers(int*);         //definition to function getAnswers()
+        void Answers::removeAnswersPtr(int*);   //definition to function removeAnswers()
         void Answers::storeAnswers(int);    //definition to function storeAnswers()
+
 };
+
+#endif
