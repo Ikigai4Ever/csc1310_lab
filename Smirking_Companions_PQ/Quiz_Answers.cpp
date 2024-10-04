@@ -51,7 +51,7 @@ void Answers::storeAnswers(int userResponse){
  *                   each number previously answered to calculate 
  *                   percentages
  */
-Answers::Answers(int* answersPtr){
+Answers::Answers(){
     int totalResponses = 0, answerNum = 0; 
     std::string answer;
 

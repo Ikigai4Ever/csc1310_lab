@@ -17,15 +17,15 @@
 
 class Answers{
     private:
-        std::fstream answerFile;     //file that all of the previous answers are stored in
+        std::fstream answerFile;    //file that all of the previous answers are stored in
 
     public:
-        int *answersPtr;             //answers pointer for allocated questions array to calculate percentages
-        void printAnswers(int*);     //definition to function printAnswers()
-        void storeAnswers(int);      //definition to function storeAnswers()
-
+        int *answersPtr;            //answers pointer for allocated questions array to calculate percentages
+        void printAnswers(int*);    //definition to function printAnswers()
+        void storeAnswers(int);     //definition to function storeAnswers()
+        
         //constructor
-        Answers(int*);
+        Answers();
 
         //destructor
         ~Answers();
