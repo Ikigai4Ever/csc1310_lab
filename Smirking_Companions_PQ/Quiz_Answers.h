@@ -20,9 +20,9 @@ class Answers{
 
     public:
         int *questionsPtr;           //questions pointer for allocated questions array to calculate percentages
-        void Answers::getAnswers(int*);         //definition to function getAnswers()
-        void Answers::removeAnswersPtr(int*);   //definition to function removeAnswers()
-        void Answers::storeAnswers(int);    //definition to function storeAnswers()
+        void getAnswers(int*);         //definition to function getAnswers()
+        void removeAnswersPtr(int*);   //definition to function removeAnswers()
+        void storeAnswers(int);    //definition to function storeAnswers()
 
 };
 
