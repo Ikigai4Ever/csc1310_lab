@@ -1,14 +1,14 @@
 /* 
  *  NAME: Zander Underwood
- *  DATE:  10/2/24
+ *  DATE:  10/4/24
  *  DESCRIPTION:    Store the people who take the test's information (first and last name, email, phone number) along with what they scored on the personality.
  *  PROGRAM: Quiz_Taker_Info.cpp
  */
 
 #include "Quiz_Taker_Info.h"
 
-
-void Info::makeInfo()
+//constructor function
+Info::Info()
 {
     infoArray = new string*[4];
 
@@ -24,12 +24,7 @@ void Info::makeInfo()
 void Info::getInfo()
 {
     fstream Infofile;
-    
-    
-   
-  
 
-   
     //Collecting the info from the user
     cin.ignore();
     cout << "\nWhat's your First name?   :";
@@ -62,7 +57,8 @@ void Info::getInfo()
     
 }
 
-void Info::delInfo()
+//deconstructor function
+Info::~Info()
 {
 
 for(int i = 0 ; i < 4; ++i)
