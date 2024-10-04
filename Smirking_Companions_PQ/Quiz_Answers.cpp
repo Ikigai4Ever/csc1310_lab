@@ -1,6 +1,6 @@
 /* 
  *  NAME: Ty Ahrens
- *  DATE: 10/2/24
+ *  DATE: 10/4/24
  *  DESCRIPTION: Class that goes to calculate the
  *               percentages of quiz takers that have responded to each
  *               answer previously in answers.txt. This also goes to write
@@ -10,14 +10,48 @@
 
 #include "Quiz_Answers.h"
 
+
 /*
- *      FUNCTION: getAnswers()
+ *      FUNCTION: printAnswers()
+ *      DESCRIPTION: Test case to print out all of the files that have been  
+ *                   read into the answersPtr array to make sure it works
+ */
+
+void Answers::printAnswers(int* answersPtr){
+    float numSpacingTest; 
+
+    std::cout << "Printing previous answers for testing purposes: ";
+    for (int i = 0; i < sizeof(&answersPtr); i+2){
+        std::cout << answersPtr[i] << answersPtr[i+1] << " ";
+        numSpacingTest = i % 19; //test to see if it is the 20th number to print out on the next line
+        if (numSpacingTest = 0){
+            std::cout << "\n";  //go to the next line after 20 number print outs
+        }
+    }
+}
+
+/*
+ *      FUNCTION: storeAnswers()
+ *      DESCRIPTION: Store all of the answers that the user puts down 
+ *                   in the personality quiz in the answers.txt file
+ */
+
+void Answers::storeAnswers(int userResponse){
+    answerFile.open("answers.txt");     //open answers.txt file
+    answerFile << userResponse;     //place answer from questions sent from main into answers text file
+    answerFile << ",";      //add delimiter to space out the answers
+    answerFile.ignore();
+    answerFile.close();     //close answers.txt file
+}
+
+/*
+ *      FUNCTION: Answers()
  *      DESCRIPTION: Get the number of answers from the answers.txt 
  *                   file and dynamically allocate a new array to store
  *                   each number previously answered to calculate 
  *                   percentages
  */
-void Answers::getAnswers(int* answersPtr){
+Answers::Answers(int* answersPtr){
     int totalResponses = 0, answerNum = 0; 
     std::string answer;
 
@@ -40,23 +74,10 @@ void Answers::getAnswers(int* answersPtr){
 }
 
 /*
- *      FUNCTION: removeAnswersPtr()
- *      DESCRIPTION: Deletes answer pointer
+ *      FUNCTION: ~Answers()
+ *      DESCRIPTION: Deconstructor for Answers class
  */
-void Answers::removeAnswersPtr(int* answersPtr){
-    delete answersPtr;
-}
-
-/*
- *      FUNCTION: storeAnswers()
- *      DESCRIPTION: Store all of the answers that the user puts down 
- *                   in the personality quiz in the answers.txt file
- */
-
-void Answers::storeAnswers(int userResponse){
-    answerFile.open("answers.txt");     //open answers.txt file
-    answerFile << userResponse;     //place answer from questions sent from main into answers text file
-    answerFile << ",";      //add delimiter to space out the answers
-    answerFile.ignore();
-    answerFile.close();     //close answers.txt file
+Answers::~Answers(){
+    delete [] answersPtr;
+    std::cout << "\nDynamic memory for Quiz Answers has been released.\n";
 }

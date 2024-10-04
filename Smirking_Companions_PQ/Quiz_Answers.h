@@ -1,6 +1,6 @@
 /* 
  *  NAME: Ty Ahrens
- *  DATE: 10/2/24
+ *  DATE: 10/4/24
  *  DESCRIPTION: Class that goes to calculate the
  *               percentages of quiz takers that have responded to each
  *               answer previously in answers.txt. This also goes to write
@@ -13,16 +13,22 @@
 
 #include <fstream>
 #include <string>
+#include <iostream>
 
 class Answers{
     private:
-        std::fstream answerFile;    //file that all of the previous answers are stored in
+        std::fstream answerFile;     //file that all of the previous answers are stored in
 
     public:
-        int *questionsPtr;           //questions pointer for allocated questions array to calculate percentages
-        void getAnswers(int*);         //definition to function getAnswers()
-        void removeAnswersPtr(int*);   //definition to function removeAnswers()
-        void storeAnswers(int);    //definition to function storeAnswers()
+        int *answersPtr;             //answers pointer for allocated questions array to calculate percentages
+        void printAnswers(int*);     //definition to function printAnswers()
+        void storeAnswers(int);      //definition to function storeAnswers()
+
+        //constructor
+        Answers(int*);
+
+        //destructor
+        ~Answers();
 
 };
 
