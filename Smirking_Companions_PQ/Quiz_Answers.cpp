@@ -10,14 +10,39 @@
 
 #include "Quiz_Answers.h"
 
+
 /*
- *      FUNCTION: getAnswers()
+ *      FUNCTION: printAnswers()
+ *      DESCRIPTION: Store all of the answers that the user puts down 
+ *                   in the personality quiz in the answers.txt file
+ */
+
+void Answers::printAnswers(int* answersPtr){
+
+}
+
+/*
+ *      FUNCTION: storeAnswers()
+ *      DESCRIPTION: Store all of the answers that the user puts down 
+ *                   in the personality quiz in the answers.txt file
+ */
+
+void Answers::storeAnswers(int userResponse){
+    answerFile.open("answers.txt");     //open answers.txt file
+    answerFile << userResponse;     //place answer from questions sent from main into answers text file
+    answerFile << ",";      //add delimiter to space out the answers
+    answerFile.ignore();
+    answerFile.close();     //close answers.txt file
+}
+
+/*
+ *      FUNCTION: Answers()
  *      DESCRIPTION: Get the number of answers from the answers.txt 
  *                   file and dynamically allocate a new array to store
  *                   each number previously answered to calculate 
  *                   percentages
  */
-void Answers::getAnswers(int* answersPtr){
+Answers::Answers(int* answersPtr){
     int totalResponses = 0, answerNum = 0; 
     std::string answer;
 
@@ -40,22 +65,8 @@ void Answers::getAnswers(int* answersPtr){
 }
 
 /*
- *      FUNCTION: storeAnswers()
- *      DESCRIPTION: Store all of the answers that the user puts down 
- *                   in the personality quiz in the answers.txt file
- */
-
-void Answers::storeAnswers(int userResponse){
-    answerFile.open("answers.txt");     //open answers.txt file
-    answerFile << userResponse;     //place answer from questions sent from main into answers text file
-    answerFile << ",";      //add delimiter to space out the answers
-    answerFile.ignore();
-    answerFile.close();     //close answers.txt file
-}
-
-/*
  *      FUNCTION: ~Answers()
- *      DESCRIPTION: Deconstructor
+ *      DESCRIPTION: Deconstructor for Answers class
  */
 Answers::~Answers(){
     delete [] questionsPtr;
