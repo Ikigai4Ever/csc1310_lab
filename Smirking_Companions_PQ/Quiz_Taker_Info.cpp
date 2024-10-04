@@ -10,11 +10,11 @@
 //constructor function
 Info::Info()
 {
-    infoArray = new string*[4];
+    infoArray = new string*[4]; //create a pointer to point to an array of pointer strings, pointers am i right?
 
     for (int i = 0; i<4;i++)
     {
-        infoArray[i] = new string;
+        infoArray[i] = new string; //creates 4 pointer strings 
     }
 
 
@@ -69,6 +69,7 @@ for(int i = 0 ; i < 4; ++i)
 
 }
 
+//lets driver access first name
 string* Info::getname(int index)
 {
 
