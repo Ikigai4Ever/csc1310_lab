@@ -1,6 +1,6 @@
 /* 
  *  NAME: Ty Ahrens
- *  DATE: 10/2/24
+ *  DATE: 10/4/24
  *  DESCRIPTION: Class that goes to calculate the
  *               percentages of quiz takers that have responded to each
  *               answer previously in answers.txt. This also goes to write
@@ -13,12 +13,21 @@
 
 /*
  *      FUNCTION: printAnswers()
- *      DESCRIPTION: Store all of the answers that the user puts down 
- *                   in the personality quiz in the answers.txt file
+ *      DESCRIPTION: Test case to print out all of the files that have been  
+ *                   read into the answersPtr array to make sure it works
  */
 
 void Answers::printAnswers(int* answersPtr){
+    float numSpacingTest; 
 
+    std::cout << "Printing previous answers for testing purposes: ";
+    for (int i = 0; i < sizeof(&answersPtr); i+2){
+        std::cout << answersPtr[i] << answersPtr[i+1] << " ";
+        numSpacingTest = i % 19; //test to see if it is the 20th number to print out on the next line
+        if (numSpacingTest = 0){
+            std::cout << "\n";  //go to the next line after 20 number print outs
+        }
+    }
 }
 
 /*
