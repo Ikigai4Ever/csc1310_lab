@@ -11,42 +11,51 @@
 string Info::getInfo()
 {
     fstream Infofile;
-    Info* person;
-    string* infoArray[] = {&firstName,&lastName,&email,&phoneNum};
+    Info person;
+    string* infoArray[4];
    
+   infoArray[0] = new string (firstName);
+   infoArray[1] = new string (lastName);
+   infoArray[2] = new string (email);
+   infoArray[3] = new string (phoneNum);
+
+   string** dblpntr = infoArray;
 
     //Collecting the info from the user
     cout << "\nWhat's your First name?   :";
     getline(cin,firstName);
-    infoArray[0] = &firstName;
+    *infoArray[0] = firstName;
     cout << "\nWhat's your Last Name? :";
     getline(cin,lastName);
-    infoArray[1] = &lastName;
+    *infoArray[1] = lastName;
     cout << "\nWhat's your Email? :";
     getline(cin,email);
-    infoArray[2] = &email;
+    *infoArray[2] = email;
     cout << "\nWhat's your Phone number? :";
     getline(cin,phoneNum);
-    infoArray[3] = &phoneNum;
+    *infoArray[3] = phoneNum;
+ 
+    //assigning the info to person object
+    person.firstName = firstName;
+    person.lastName = lastName;
+    person.email = email;
+    person.phoneNum = phoneNum;
 
-    person->firstName = firstName;
-    person->lastName = lastName;
-    person->email = email;
-    person->phoneNum = phoneNum;
-
-
+    //Opens the file so it can print to it
     Infofile.open("Quiz_Taker_Info.txt", fstream::app);
-    if(Infofile.is_open())                                  //Making sure the text file is opening
+
+    //Prints to the file
+    Infofile << firstName <<"#";
+    Infofile << lastName<<"#";
+    Infofile << email<<"#";
+    Infofile << phoneNum<<endl;
+    //Closes file
+    Infofile.close();
+
+    for(int i = 0 ; i < 4; ++i)
     {
-        Infofile << firstName <<"#";
-        Infofile << lastName<<"#";
-        Infofile << email<<"#";
-        Infofile << phoneNum<<endl;
-    }
-    else
-    {
-        cout << "Couldn't find the text file." << endl;
+        delete dblpntr[i];
     }
 
-    return person->firstName;
+    return person.firstName ;
 }
